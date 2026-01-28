@@ -169,7 +169,7 @@ def view_transactions(expenses):
     for (year, month) in sorted(grouped):
         month_name = datetime(year, month, 1).strftime("%B %Y")
 
-        print(f"\n{'-' * 20}{month_name}{'-' * 20}")
+        print(f"\n{'-' * 24}{month_name}{'-' * 25}")
 
         # Sort by amount (highest → lowest)
         month_transactions = sorted(
@@ -188,8 +188,8 @@ def view_transactions(expenses):
             )
             month_total += t["amount"]
 
-        print("-" * (30))
-        print(f"month total:{month_total:>23.2f}")
+        print("-" * (25))
+        print(f"month total:{month_total:>13.2f}")
     
 def main():
     """This is an expense tracking app that I'm going to continue to develop overtime in order to use it 
@@ -201,8 +201,6 @@ def main():
        
     #make a set of the existing keys
     existing_ids = {t["id"] for t in expenses}
-
-    print(expenses)
 
     #load new csv transactions data from the user
     if ask_yes_no("do you want to import a csv file? ") == 'yes':
