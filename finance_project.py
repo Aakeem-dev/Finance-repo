@@ -84,8 +84,6 @@ def get_csv_files(expenses, existing_ids):
         if ask_yes_no("Do you want to import another csv file?: ") == "no":
             break
 
-
-
 def get_manual_inputs(expenses, existing_ids):
     
     transactions = []
