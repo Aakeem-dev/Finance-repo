@@ -3,162 +3,189 @@
         "date": "2026-01-20T00:00:00",
         "description": "MCDONALD'S F1696",
         "category": "dining",
-        "amount": 11.36
+        "amount": 11.36,
+        "id": "f74e72f94aca199b4763109d9b773b6a1dd318298bd09170ca7594462f2ec5a7"
     },
     {
         "date": "2026-01-19T00:00:00",
         "description": "THE HOME DEPOT #3816",
         "category": "merchandise",
-        "amount": 10.75
+        "amount": 10.75,
+        "id": "f50f8a197e2e46924388f7fbc96d675e95142d232021c91e83e08503ea0a7c07"
     },
     {
         "date": "2026-01-19T00:00:00",
         "description": "WM SUPERCENTER #2726",
         "category": "merchandise",
-        "amount": 10.65
+        "amount": 10.65,
+        "id": "519cd6c63b65cb2034250817de48625aaca97e2ca145cdc64d73032fb60eed9c"
     },
     {
         "date": "2026-01-17T00:00:00",
         "description": "KROGER 5514",
         "category": "merchandise",
-        "amount": 37.14
+        "amount": 37.14,
+        "id": "7b2c950cc3170d4203778c2c1bce2edeef60bd646be9e30269b0e35bd0086dcd"
     },
     {
         "date": "2026-01-17T00:00:00",
         "description": "SHELL OIL 574422724QPS",
         "category": "transportation",
-        "amount": 10.78
+        "amount": 10.78,
+        "id": "8198c4ef3b9dbc21d3836cd0c9915ec6fc04d5180c4d79026c4c9ac515dcf614"
     },
     {
         "date": "2026-01-17T00:00:00",
         "description": "SPEEDWAY 45236",
         "category": "transportation",
-        "amount": 14.18
+        "amount": 14.18,
+        "id": "63826b812669c3891b8deaeacfa77ce54b36f248b53cb7b10c424b8864753bf4"
     },
     {
         "date": "2026-01-13T00:00:00",
         "description": "DONATOS PIZZERIA #0343",
         "category": "dining",
-        "amount": 17.09
+        "amount": 17.09,
+        "id": "f43bd9281803e700ea8e4d24075762581c38822d85c67f01d27138e2a8240c4f"
     },
     {
         "date": "2026-01-14T00:00:00",
         "description": "KROGER #514",
         "category": "merchandise",
-        "amount": 41.08
+        "amount": 41.08,
+        "id": "d6f24a842a884c01652e655e35e2e98716162aa79b6acae9508191e5bb0c546d"
     },
     {
         "date": "2026-01-13T00:00:00",
         "description": "NAYAX VENDING 54",
         "category": "dining",
-        "amount": 0.4
+        "amount": 0.4,
+        "id": "6e622466f5240e1f17a240f23bc69bc5a0e7612f06ad5c60f6f14d20b3281d04"
     },
     {
         "date": "2026-01-13T00:00:00",
         "description": "Nyx*NAYAX COPY SERVICE",
         "category": "other",
-        "amount": 0.6
+        "amount": 0.6,
+        "id": "2ceb9476e8a7ecac266ed749eac87c3dcf1f66ef94eff021fc7f22c6a0ecf4aa"
     },
     {
         "date": "2026-01-12T00:00:00",
         "description": "CHIPOTLE MEX GR ONLINE",
         "category": "dining",
-        "amount": 9.5
+        "amount": 9.5,
+        "id": "c1b0adf4f349d15a4f3f56d9d2a336b10bd6453d94a0d31006bc7c76623b7ace"
     },
     {
         "date": "2026-01-11T00:00:00",
         "description": "SPEEDWAY 45236",
         "category": "transportation",
-        "amount": 14.89
+        "amount": 14.89,
+        "id": "104a1ef61f2232b2ed347a93b811cffe0470614ed4c05ec8452e8b253d7a9bf2"
     },
     {
         "date": "2026-01-11T00:00:00",
         "description": "KROGER #514",
         "category": "merchandise",
-        "amount": 14.89
+        "amount": 14.89,
+        "id": "85cb1e25b3c53d676c3a73bc9738f4fcd396d0602aff5df17c26c5d2de5a471f"
     },
     {
         "date": "2026-01-11T00:00:00",
         "description": "FSI*OHIO BILLMATRIX",
         "category": "utilities",
-        "amount": 49.85
+        "amount": 49.85,
+        "id": "57eed9869485b7c98d0800f4fab729664ea307e6d10fb2fe915ed45c33a3d5a2"
     },
     {
         "date": "2026-01-08T00:00:00",
         "description": "TST*NEWFANGLED KITCHEN",
         "category": "dining",
-        "amount": 15.0
+        "amount": 15.0,
+        "id": "c0445f2bfe184e4ecf77ae9ae552880f6d5fde806d4add32516500b6b3fe5e3b"
     },
     {
         "date": "2026-01-07T00:00:00",
         "description": "KROGER #514",
         "category": "merchandise",
-        "amount": 24.28
+        "amount": 24.28,
+        "id": "eaa74cdd81f8674ba9958d7a185755e31671fb50d4ac48f24ce2b87334ceece0"
     },
     {
         "date": "2026-01-06T00:00:00",
         "description": "RAISING CANES 0752",
         "category": "dining",
-        "amount": 11.57
+        "amount": 11.57,
+        "id": "ca13c93b44b383398440f5dae8aad1ab80e73a3f9a05f40871dd01ea4c5e82db"
     },
     {
         "date": "2026-01-06T00:00:00",
         "description": "TARGET        00019729",
         "category": "merchandise",
-        "amount": 40.47
+        "amount": 40.47,
+        "id": "b28c35d8bd375d4737160473e54e0f717d8f932ab76fc56dc071b2ae3995f6f9"
     },
     {
         "date": "2026-01-05T00:00:00",
         "description": "CHEESECAKE 030 ONLINE",
         "category": "dining",
-        "amount": 39.9
+        "amount": 39.9,
+        "id": "17f1ee3cd7534f33e4ad50db05c60623ed7cbb191f85fb3fd99173c69f0b7129"
     },
     {
         "date": "2026-01-03T00:00:00",
         "description": "GET GO #3537",
         "category": "transportation",
-        "amount": 13.42
+        "amount": 13.42,
+        "id": "f77db50292e8f956141cf6ca2871592840c486482aae80bb0db11a6014c48735"
     },
     {
         "date": "2026-01-03T00:00:00",
         "description": "KROGER #538",
         "category": "merchandise",
-        "amount": 37.57
+        "amount": 37.57,
+        "id": "f7c8da142fd94cf6237cb8d1d455fcdebd2addf5a8788dec90195af7692608f0"
     },
     {
         "date": "2026-01-02T00:00:00",
         "description": "RAISING CANES 0752",
         "category": "dining",
-        "amount": 11.57
+        "amount": 11.57,
+        "id": "bf6ed944f9623ba7b01c465b5364d86d82daa39329c49b136a6039d535531ea4"
     },
     {
         "date": "2026-01-02T00:00:00",
         "description": "COLUMBIA GAS OF OHIO",
         "category": "utilities",
-        "amount": 97.0
+        "amount": 97.0,
+        "id": "0114fc467df1817d65664947812f8ec7af795cba384fd5df4e8d98c0ded28362"
     },
     {
         "date": "2025-12-31T00:00:00",
         "description": "DONATOS PIZZERIA #0138",
         "category": "dining",
-        "amount": 17.59
+        "amount": 17.59,
+        "id": "7f5d39fa3ba3ff6fc7c8fd01a2774eb087eb112607f6e8f12e430a43ef8083e0"
     },
     {
         "date": "2025-12-31T00:00:00",
         "description": "SPEEDWAY 45236",
         "category": "transportation",
-        "amount": 12.95
+        "amount": 12.95,
+        "id": "942c258fcbd27e63ba729271f18412f667c2ce47106ba7ef9ffc639858cc5ee5"
     },
     {
         "date": "2025-12-31T00:00:00",
         "description": "WAL-MART #3447",
         "category": "merchandise",
-        "amount": 10.64
+        "amount": 10.64,
+        "id": "48195f1643fb69c37599cada8d1bd10aad537f3f18a6f5ffe7c7e7bd0540b92f"
     },
     {
         "date": "2025-12-30T00:00:00",
         "description": "PMT*OH BUREAU MOTOR VE",
         "category": "other",
-        "amount": 27.0
+        "amount": 27.0,
+        "id": "fd00c6527ffb7a91618b31a6cb148ab14b7c3c2214bb2620a1379851e78d77ea"
     }
 ]

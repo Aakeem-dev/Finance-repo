@@ -2,6 +2,11 @@ from datetime import datetime
 from collections import defaultdict
 import csv
 import json
+import hashlib
+
+def make_transaction_id(date, description, amount, source, row):
+    raw = f"{date.isoformat()}|{description.strip().lower()}|{amount:.2f}|{source}|{row}"
+    return hashlib.sha256(raw.encode()).hexdigest()
 
 def load_json(filename = "transactions_data.json"):
     #load in the transactions data into the program
@@ -29,7 +34,7 @@ def ask_yes_no(prompt):
             return answer
         print("Please enter yes or no")
         
-def read_csv(file_name):
+def read_csv(file_name, existing_ids):
     #import data from the user provided file 
     items = []
     
@@ -37,15 +42,26 @@ def read_csv(file_name):
         with open(file_name, "r", newline="") as read_file:
             data = csv.DictReader(read_file)
 
-            for line in data:
+            for line_index, line in enumerate(data):
                 try:
+                    date = datetime.strptime(line["Transaction Date"], "%Y-%m-%d")
+                    description = line["Description"]
+                    category = line["Category"]
+                    amount = round(float(line["Amount"]),2)
+                    tx_id = make_transaction_id(date,description,category,amount,file_name,line_index)
+
+                    if tx_id in existing_ids:
+                        continue 
+
                     item = {
-                        'date' : datetime.strptime(line["Transaction Date"], "%Y-%m-%d"),
-                        'description' : line['Description'].strip(),
-                        'category' : line['Category'].lower().strip(),
-                        'amount' : round(float(line['Amount']), 2)
+                        "id" : tx_id,
+                        "date" : date,
+                        "description" : description.strip(),
+                        "category" : category.lower().strip(),
+                        "amount" : amount
                     }
                     items.append(item)
+                    existing_ids.add(tx_id)
 
                 except (ValueError, KeyError) as e:
                     continue
@@ -58,27 +74,27 @@ def read_csv(file_name):
         print("There was an error loading the file.")
     return items
         
-def get_csv_files(expenses):
+def get_csv_files(expenses, existing_ids):
     #get all the files to be imported
-
+    
     while True:
         file_name = input("enter the file name (please ensure it is a .csv file): ")
-        expenses.extend(read_csv(file_name))
+        expenses.extend(read_csv(file_name, existing_ids))
+
         if ask_yes_no("Do you want to import another csv file?: ") == "no":
             break
 
 
 
-def get_manual_inputs():
+def get_manual_inputs(expenses, existing_ids):
     
     transactions = []
     
-
-    print('Lets gather information about your transation\n')
+    print('----Lets gather information about your transation----\n')
 
     while True:
         transaction = {}
-        details = set()
+        
         while True:
             info = input("What's the date of the transaction? (enter in the form '00-00-0000' month-day-year): ")
             try:
@@ -105,7 +121,17 @@ def get_manual_inputs():
 
         print(f"\nHere is the information you provided ->  \n{transaction}")
         if ask_yes_no(f"Does everythting look correct? (Enter yes to save the transaction): ") == 'yes':
+            tx_id = make_transaction_id(
+                date=transaction["date"],
+                description=transaction["description"],
+                amount=transaction["amount"],
+                source="manual",
+                row=len(expenses) + len(transactions)
+            )
+            transaction["id"] = tx_id
             transactions.append(transaction)
+            existing_ids.add(tx_id)
+
         else:
             print("Transaction discarded!")
 
@@ -171,15 +197,30 @@ def main():
     
     #inialize the transactions list, load previous transactions data into the program
     expenses = load_json()
+    existing_ids = set()
+    for i, t in enumerate(expenses):
+    # Generate ID using your existing function
+        t["id"] = make_transaction_id(
+            date=t["date"],
+            description=t["description"],
+            amount=t["amount"],
+            source="csv",  # label for old CSV transactions
+            row=i          # ensures uniqueness even if two transactions are identical
+        )
+        existing_ids.add(t["id"])
+    #make a set of the existing keys
+    #existing_ids = {t["id"] for t in expenses}
+
+    print(expenses)
 
     #load new csv transactions data from the user
     if ask_yes_no("do you want to import a csv file? ") == 'yes':
-        get_csv_files(expenses)
+        get_csv_files(expenses,existing_ids)
     
 
     #prompt the user for manual transaction inputs 
     if ask_yes_no("do you want to manually enter a transaction?: ") == 'yes':
-        expenses.extend(get_manual_inputs())
+        expenses.extend(get_manual_inputs(expenses, existing_ids))
 
     #export transactions data to json file
     write_json(serialize_transactions(expenses))
