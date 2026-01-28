@@ -197,19 +197,10 @@ def main():
     
     #inialize the transactions list, load previous transactions data into the program
     expenses = load_json()
-    existing_ids = set()
-    for i, t in enumerate(expenses):
-    # Generate ID using your existing function
-        t["id"] = make_transaction_id(
-            date=t["date"],
-            description=t["description"],
-            amount=t["amount"],
-            source="csv",  # label for old CSV transactions
-            row=i          # ensures uniqueness even if two transactions are identical
-        )
-        existing_ids.add(t["id"])
+ 
+       
     #make a set of the existing keys
-    #existing_ids = {t["id"] for t in expenses}
+    existing_ids = {t["id"] for t in expenses}
 
     print(expenses)
 
@@ -217,7 +208,11 @@ def main():
     if ask_yes_no("do you want to import a csv file? ") == 'yes':
         get_csv_files(expenses,existing_ids)
     
+    #---------------------------------------------------------------------------------
 
+    """THIS HERE IS CHANGE I'M ADDING TO TEST IF BRANCHING IS DOING ANYTHING"""
+
+    #-------------------------------------------------------------------------------
     #prompt the user for manual transaction inputs 
     if ask_yes_no("do you want to manually enter a transaction?: ") == 'yes':
         expenses.extend(get_manual_inputs(expenses, existing_ids))
