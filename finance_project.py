@@ -207,12 +207,7 @@ def main():
     #load new csv transactions data from the user
     if ask_yes_no("do you want to import a csv file? ") == 'yes':
         get_csv_files(expenses,existing_ids)
-    
-    #---------------------------------------------------------------------------------
-
-    """THIS HERE IS CHANGE I'M ADDING TO TEST IF BRANCHING IS DOING ANYTHING"""
-
-    #-------------------------------------------------------------------------------
+   
     #prompt the user for manual transaction inputs 
     if ask_yes_no("do you want to manually enter a transaction?: ") == 'yes':
         expenses.extend(get_manual_inputs(expenses, existing_ids))
